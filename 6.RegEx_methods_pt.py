@@ -44,26 +44,26 @@ import re
 # The sub() method replaces the matches with the text of your choice.
 
 # Syntax: re.sub(pattern, repl, string, count=0, flags=0)
-string = "abc 12\
-    de 23 \n f45 621" # el \ es para continuar en la siguiente linea
+# string = "abc 12\
+#     de 23 \n f45 621" # el \ es para continuar en la siguiente linea
 
  # \n ->> New line, \t ->> Tab, \b ->> Backspace, \r ->> Carriage return
 
-print(string)
+# print(string)
 
 # \s ->> Matches any whitespace character (spaces, tabs, line breaks).
 # \s+ ->> Matches any whitespace character (spaces, tabs, line breaks) one or more times.  
 
-pattern = "\s+"   
+# pattern = "\s+"   
 
 # No se elimina el \n, solo los espacios en blanco
 
-print(re.findall(pattern, string))
+# print(re.findall(pattern, string))
 
-replace = "" # Reemplazar los espacios en blanco por nada
+# replace = "" # Reemplazar los espacios en blanco por nada
 
-new_string = re.sub(pattern, replace, string) 
-print(new_string) # Output: abc12de23f45621
+# new_string = re.sub(pattern, replace, string) 
+# print(new_string) # Output: abc12de23f45621
 
 # *-*-*-*-*-*- Example 17 ->>>> Sub() Method -*-*-*-*-*-*-*-*-*-*-
 # --------------------------------------------------------------------
@@ -72,3 +72,17 @@ print(new_string) # Output: abc12de23f45621
 # Syntax: re.subn(pattern, repl, string, count=0, flags=0)
 
 
+string ="abc 12\
+    de 23 \n f45 621"
+
+pattern = "\s+"
+replace = ""
+
+# Reemplazar solo el primer espacio en blanco
+new_string = re.sub(pattern, replace, string, 1) # Output: abc12de 23 \n f45 621
+# Remplazar varios espacios en blanco
+new_string = re.sub(pattern, replace, new_string, 2) # Output: abc12de23 f45 621
+# new_string = re.sub(pattern, replace, new_string, 3) # Output: abc12de23f45 621 
+new_string = re.sub(pattern, replace, new_string, 4) # Output: abc12de23f45621
+
+print(new_string) 
