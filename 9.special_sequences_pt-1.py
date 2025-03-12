@@ -23,7 +23,7 @@ import re
 #<re.Match object; span=(14, 15), match='9'>
 #<re.Match object; span=(15, 16), match='0'>
 # -------------------------------------------------------------------
-# *-*-*-*-*-*-*-*-*-* Example 23 ->>> \D - [a-zA-Z_] *-*-*-*-*-*-*-*-*-*-
+# *-*-*-*-*-*-*-*-*-* Example 23 ->>> \D - [a-zA-Z_ ] + symbols *-*-*-*-*-*-*-*-*-*-
 # \D atrapara cualquier cosa que no sea un digito (0-9)
 match_result = re.finditer(r"\D", "12 45 # HI There < ? _")
 
