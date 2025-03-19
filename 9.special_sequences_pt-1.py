@@ -25,10 +25,10 @@ import re
 # -------------------------------------------------------------------
 # *-*-*-*-*-*-*-*-*-* Example 23 ->>> \D - [a-zA-Z_ ] + symbols *-*-*-*-*-*-*-*-*-*-
 # \D atrapara cualquier cosa que no sea un digito (0-9)
-match_result = re.finditer(r"\D", "12 45 # HI There < ? _")
+# match_result = re.finditer(r"\D", "12 45 # HI There < ? _")
 
-for match in match_result:
-    print(match)
+# for match in match_result:
+#     print(match)
 
 # Output:
 # <re.Match object; span=(2, 3), match=' '>
@@ -53,7 +53,29 @@ for match in match_result:
 # -------------------------------------------------------------------
 # *-*-*-*-*-*-*-*-*-* Example 24 ->>> \s - [space, tab, " ", "\t", "\n"] *-*-*-*-*-*-*-*-*-*-
 # \s atrapara cualquier espacio en blanco, tabulacion, salto de linea, etc.
+# match_result = re.finditer(r"\s", "12 45 # HI There \t \n < ? _") # con \s atrapara los espacios en blanco
+
+# for match in match_result:
+#     print(match)
+    
+# Output:
+# <re.Match object; span=(2, 3), match=' '>
+# <re.Match object; span=(5, 6), match=' '>
+# <re.Match object; span=(7, 8), match=' '>
+# <re.Match object; span=(10, 11), match=' '>
+# <re.Match object; span=(16, 17), match=' '>
+# <re.Match object; span=(17, 18), match='\t'>
+# <re.Match object; span=(18, 19), match=' '>
+# <re.Match object; span=(19, 20), match='\n'>
+# <re.Match object; span=(20, 21), match=' '>
+# <re.Match object; span=(22, 23), match=' '>
+# <re.Match object; span=(24, 25), match=' '>
 
 # -------------------------------------------------------------------
-# *-*-*-*-*-*-*-*-*-* Example 25 ->>> \S - [a-zA-Z0-9_] *-*-*-*-*-*-*-*-*-*-
+# *-*-*-*-*-*-*-*-*-* Example 25 ->>> \S - [a-zA-Z0-9_] + symbols *-*-*-*-*-*-*-*-*-*-
 # \S atrapara cualquier cosa que no sea un espacio en blanco, tabulacion, salto de linea, etc.
+
+match_result = re.finditer(r"\S", "12 45 # HI There \t \n < ? _") # con \s atrapara los espacios en blanco
+
+for match in match_result:
+    print(match)
