@@ -15,4 +15,15 @@ with open('urls.txt') as file:
     matches_result = re.finditer(pattern, urls)
 
     for match in matches_result:
-        print(match)
+        # print(match)
+        # print(match.group(0))
+        # print(match.group(1))
+        print(match.group(2))
+
+        # Output
+        # google
+        # paiting
+        # awesome
+        # planet
+        # Variables
+ 
